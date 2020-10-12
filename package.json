@@ -1,0 +1,23 @@
+{
+  "name": "mini-js-utils",
+  "version": "1.0.2",
+  "description": "一个简洁的Javascript工具库",
+  "main": "umd/index.js",
+  "scripts": {
+    "build": "webpack",
+    "jsdoc": "jsdoc2md -f src/**/*.js > readme.md"
+  },
+  "author": "aaaaaandy",
+  "keywords": [
+    "JavaScript",
+    "Utils",
+    "Type",
+    "Date"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "jsdoc-to-markdown": "^6.0.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
+}
