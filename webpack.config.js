@@ -9,6 +9,7 @@ module.exports = {
 		library: 'mini-js-utils',
 		libraryTarget: 'umd',
 		filename: 'index.js',
+		globalObject: "this",
 		path: path.resolve(__dirname, 'umd'),
 	},
 	module: {
