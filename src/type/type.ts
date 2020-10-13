@@ -19,7 +19,7 @@
  * getTypeString(global); // global node环境下
  * getTypeString(window); // window 浏览器环境下
  */
-const getTypeString = (value) => {
+const getTypeString = (value: any): string => {
 	const objectType = Object.prototype.toString.call(value);
 
 	switch (objectType) {
@@ -66,7 +66,7 @@ const getTypeString = (value) => {
  * isNumber(123); // true
  * isNumber('123'); // false
  */
-const isNumber = value => getTypeString(value) === 'number';
+const isNumber = (value: any) => getTypeString(value) === 'number';
 
 /**
  * 是否为字符串
@@ -76,7 +76,7 @@ const isNumber = value => getTypeString(value) === 'number';
  * isString(123); // false
  * isString('123'); // true
  */
-const isString = value => getTypeString(value) === 'string';
+const isString = (value: any) => getTypeString(value) === 'string';
 
 /**
  * 是否为数组
@@ -87,7 +87,7 @@ const isString = value => getTypeString(value) === 'string';
  * isArray([1, 2]); // true
  * isArray({ age: 12 }); // false
  */
-const isArray = value => getTypeString(value) === 'array';
+const isArray = (value: any) => getTypeString(value) === 'array';
 
 /**
  * 是否为对象
@@ -98,7 +98,7 @@ const isArray = value => getTypeString(value) === 'array';
  * isObject({ age: 12 }); // true
  * isObject([1, 2, 3]); // false
  */
-const isObject = value => getTypeString(value) === 'object';
+const isObject = (value: any) => getTypeString(value) === 'object';
 
 /**
  * 是否为函数
@@ -108,7 +108,7 @@ const isObject = value => getTypeString(value) === 'object';
  * isFunction(function(){}); // true
  * isFunction({ age: 12 }); // false
  */
-const isFunction = value => getTypeString(value) === 'function';
+const isFunction = (value: any) => getTypeString(value) === 'function';
 
 /**
  * 是否为布尔值
@@ -118,7 +118,7 @@ const isFunction = value => getTypeString(value) === 'function';
  * isBoolean(false); // true
  * isBoolean('false'); // false
  */
-const isBoolean = value => getTypeString(value) === 'boolean';
+const isBoolean = (value: any) => getTypeString(value) === 'boolean';
 
 /**
  * 是否为undefined
@@ -128,7 +128,7 @@ const isBoolean = value => getTypeString(value) === 'boolean';
  * isUndefined(undefined); // true
  * isUndefined(null); // false
  */
-const isUndefined = value => getTypeString(value) === 'undefined';
+const isUndefined = (value: any) => getTypeString(value) === 'undefined';
 
 /**
  * 是否为null
@@ -138,7 +138,7 @@ const isUndefined = value => getTypeString(value) === 'undefined';
  * isNull(null); // true
  * isNull(undefined); false
  */
-const isNull = value => getTypeString(value) === 'null';
+const isNull = (value: any) => getTypeString(value) === 'null';
 
 /**
  * 是否为Symbol
@@ -148,7 +148,7 @@ const isNull = value => getTypeString(value) === 'null';
  * isSymbol(12); // false
  * isSymbol(Symbol(12)); // true
  */
-const isSymbol = value => getTypeString(value) === 'symbol';
+const isSymbol = (value: any) => getTypeString(value) === 'symbol';
 
 /**
  * 是否为日期
@@ -158,7 +158,7 @@ const isSymbol = value => getTypeString(value) === 'symbol';
  * isDate(new Date()); // true
  * isDate(123); false
  */
-const isDate = value => getTypeString(value) === 'date';
+const isDate = (value: any) => getTypeString(value) === 'date';
 
 /**
  * 是否为错误
@@ -167,7 +167,7 @@ const isDate = value => getTypeString(value) === 'date';
  * @example
  * isError(new Error('nothing')); // true
  */
-const isError = value => getTypeString(value) === 'error';
+const isError = (value: any) => getTypeString(value) === 'error';
 
 /**
  * 是否为正则
@@ -176,7 +176,7 @@ const isError = value => getTypeString(value) === 'error';
  * @example
  * isRegexp(new RegExp(/\w/)); // true
  */
-const isRegexp = value => getTypeString(value) === 'regexp';
+const isRegexp = (value: any) => getTypeString(value) === 'regexp';
 
 /**
  * 是否为document对象
@@ -185,7 +185,7 @@ const isRegexp = value => getTypeString(value) === 'regexp';
  * @example
  * isDocument(document); // true
  */
-const isDocument = value => getTypeString(value) === 'document';
+const isDocument = (value: any) => getTypeString(value) === 'document';
 
 /**
  * 是否为global对象
@@ -194,7 +194,7 @@ const isDocument = value => getTypeString(value) === 'document';
  * @example
  * isGlobal(global); // true
  */
-const isGlobal = value => getTypeString(value) === 'global';
+const isGlobal = (value: any) => getTypeString(value) === 'global';
 
 /**
  * 是否为Window对象
@@ -203,7 +203,7 @@ const isGlobal = value => getTypeString(value) === 'global';
  * @example
  * isWindow(window); // true
  */
-const isWindow = value => getTypeString(value) === 'window';
+const isWindow = (value: any) => getTypeString(value) === 'window';
 
 export {
 	isNumber,

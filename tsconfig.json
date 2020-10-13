@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "./umd/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "declaration": true,
+    "target": "es5",
+    "allowJs": true,
+    "removeComments": true,
+    "moduleResolution": "Node",
+    "downlevelIteration": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

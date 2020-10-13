@@ -1,0 +1,17 @@
+declare const getTypeString: (value: any) => string;
+declare const isNumber: (value: any) => boolean;
+declare const isString: (value: any) => boolean;
+declare const isArray: (value: any) => boolean;
+declare const isObject: (value: any) => boolean;
+declare const isFunction: (value: any) => boolean;
+declare const isBoolean: (value: any) => boolean;
+declare const isUndefined: (value: any) => boolean;
+declare const isNull: (value: any) => boolean;
+declare const isSymbol: (value: any) => boolean;
+declare const isDate: (value: any) => boolean;
+declare const isError: (value: any) => boolean;
+declare const isRegexp: (value: any) => boolean;
+declare const isDocument: (value: any) => boolean;
+declare const isGlobal: (value: any) => boolean;
+declare const isWindow: (value: any) => boolean;
+export { isNumber, isString, isArray, isObject, isFunction, isBoolean, isUndefined, isNull, isSymbol, isDate, isError, isRegexp, isDocument, isGlobal, isWindow, getTypeString, };

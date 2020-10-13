@@ -25,7 +25,7 @@ import {
  * isEqual(null, undefined); // true
  * isEqual(undefined, undefined); // true
  */
-const isEqual = (value, other) => {
+const isEqual = (value: any, other: any): boolean => {
 	const typeString = getTypeString(value);
 
 	switch (typeString) {
@@ -54,7 +54,7 @@ const isEqual = (value, other) => {
  * getLength([1, 2, 3]); // 3
  * getLength({ name: 'andy', age: 12 }); // 2
  */
-const getLength = (value) => {
+const getLength = (value: any): number => {
 	if (isNumber(value)) {
 		return String(value).length;
 	}

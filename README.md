@@ -127,10 +127,10 @@ const timestamp = now(); // 1602490153920
 **Kind**: global function  
 **Returns**: <code>string</code> \| <code>number</code> - 格式化后的字符串  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| timeStamp | <code>number</code> |  | 时间戳 |
-| fmt | <code>string</code> | <code>&quot;yyyy-MM-dd HH:mm:ss&quot;</code> | 格式化字符串类型 |
+| Param | Type | Description |
+| --- | --- | --- |
+| timeStamp | <code>number</code> | 时间戳 |
+| fmt | <code>string</code> | 格式化字符串类型 |
 
 **Example**  
 ```js
@@ -145,9 +145,9 @@ const currentDate = dateFormat(now(), 'yyyy-MM-dd')
 **Kind**: global function  
 **Returns**: <code>number</code> - N天前的时间戳  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| day | <code>number</code> | <code>0</code> | N天，不传默认取当前时间戳 |
+| Param | Type | Description |
+| --- | --- | --- |
+| day | <code>number</code> | N天，不传默认取当前时间戳 |
 
 **Example**  
 ```js
@@ -164,7 +164,7 @@ const timestamp = getTimeStamp(10); // 获取十天前的时间戳
 
 | Param | Type |
 | --- | --- |
-| timeStamp | <code>number</code> |
+| timeStamp | <code>number</code> | 
 
 **Example**  
 ```js
@@ -180,7 +180,7 @@ const timestampType = isSecondsTimeStamp(now()); // false
 
 | Param | Type |
 | --- | --- |
-| timeStamp | <code>number</code> |
+| timeStamp | <code>number</code> | 
 
 **Example**  
 ```js
@@ -291,7 +291,7 @@ isEqual(undefined, undefined); // true
 
 | Param | Type |
 | --- | --- |
-| value | <code>number</code> \| <code>string</code> \| <code>object</code> \| <code>array</code> |
+| value | <code>number</code> \| <code>string</code> \| <code>object</code> \| <code>array</code> | 
 
 **Example**  
 ```js

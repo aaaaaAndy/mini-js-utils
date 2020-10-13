@@ -7,7 +7,7 @@
  * isStringEqual(12, '12'); // true
  * isStringEqual('12', '12'); // true
  */
-const isStringEqual = (str, other) => {
+const isStringEqual = (str: string, other: string): boolean => {
 	return String(str) === String(other);
 }
 

@@ -9,7 +9,7 @@ import { getLength } from "../type";
  * const timestamp = getTimeStamp(); // 获取当前时间戳
  * const timestamp = getTimeStamp(10); // 获取十天前的时间戳
  */
-const getTimeStamp = (day = 0) => {
+const getTimeStamp = (day = 0): number => {
 	const DAY_TIMESTAMP = 24 * 60 * 60 * 1000;
 	return now() - day * DAY_TIMESTAMP;
 }
@@ -21,7 +21,7 @@ const getTimeStamp = (day = 0) => {
  * @example
  * const timestampType = isSecondsTimeStamp(now()); // false
  */
-const isSecondsTimeStamp = (timeStamp) => {
+const isSecondsTimeStamp = (timeStamp: number): boolean => {
 	const currentTime = now();
 	const currentTimeLength = getLength(currentTime);
 	const timeStampLength = getLength(timeStamp);
@@ -36,7 +36,7 @@ const isSecondsTimeStamp = (timeStamp) => {
  * @example
  * const timestampType = isMillisecondsTimeStamp(now()); // true
  */
-const isMillisecondsTimeStamp = (timeStamp) => {
+const isMillisecondsTimeStamp = (timeStamp: number): boolean => {
 	const currentTime = now();
 	const currentTimeLength = getLength(currentTime);
 	const timeStampLength = getLength(timeStamp);
@@ -51,7 +51,7 @@ const isMillisecondsTimeStamp = (timeStamp) => {
  * @example
  * const isTimeStamp = isTimeStamp(now()); // true
  */
-const isTimeStamp = (timestamp) => isMillisecondsTimeStamp(timestamp) || isSecondsTimeStamp(timestamp);
+const isTimeStamp = (timestamp: number): boolean => isMillisecondsTimeStamp(timestamp) || isSecondsTimeStamp(timestamp);
 
 export {
 	getTimeStamp,

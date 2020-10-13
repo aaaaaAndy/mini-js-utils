@@ -9,7 +9,7 @@ import { isMillisecondsTimeStamp } from './timestamp';
  * const currentDate = dateFormat(now())
  * const currentDate = dateFormat(now(), 'yyyy-MM-dd')
  */
-const dateFormat = (timeStamp, fmt = 'yyyy-MM-dd HH:mm:ss') => {
+const dateFormat = (timeStamp: number, fmt = 'yyyy-MM-dd HH:mm:ss') => {
 	if (!isMillisecondsTimeStamp(timeStamp)) {
 		return timeStamp;
 	}
@@ -40,11 +40,13 @@ const dateFormat = (timeStamp, fmt = 'yyyy-MM-dd HH:mm:ss') => {
 	}
 
 	if (/(E+)/.test(fmt)) {
+		// @ts-ignore
 		fmt = fmt.replace(RegExp.$1, ((RegExp.$1.length > 1) ? (RegExp.$1.length > 2 ? '/u661f/u671f' : '/u5468') : '') + week[`${date.getDay()}`]);
 	}
 
 	for (const k in o) {
 		if (new RegExp(`(${k})`).test(fmt)) {
+			// @ts-ignore
 			fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : ((`00${o[k]}`).substr((`${o[k]}`).length)));
 		}
 	}

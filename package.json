@@ -3,9 +3,11 @@
   "version": "1.0.2",
   "description": "一个简洁的Javascript工具库",
   "main": "umd/index.js",
+  "types": "umd/index.d.ts",
   "scripts": {
     "build": "webpack",
-    "jsdoc": "jsdoc2md -f src/**/*.js > readme.md"
+    "jsdoc": "tsc ./src/index.ts && jsdoc2md -f src/**/*.js > readme.md && rm -rf src/**/*.js && rm -rf src/*.js",
+    "patch": "npm version patch && npm publish"
   },
   "author": "aaaaaandy",
   "keywords": [
@@ -17,6 +19,8 @@
   "license": "ISC",
   "devDependencies": {
     "jsdoc-to-markdown": "^6.0.1",
+    "ts-loader": "^8.0.4",
+    "typescript": "^4.0.3",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   }

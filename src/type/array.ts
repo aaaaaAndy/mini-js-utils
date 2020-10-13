@@ -9,7 +9,7 @@ import { isObjectEqual } from "./object";
  * isEffectiveArray([]);  // false
  * isEffectiveArray([1, 3]); // true
  */
-const isEffectiveArray = (arr) => isArray(arr) && arr.length > 0;
+const isEffectiveArray = (arr: Array<any>) => isArray(arr) && arr.length > 0;
 
 /**
  * 判断两个数组是否相等
@@ -21,7 +21,7 @@ const isEffectiveArray = (arr) => isArray(arr) && arr.length > 0;
  * isArrayEqual([1, 2], [2, 1]); // false
  * isArrayEqual([1, 2], ['1', 2]); // false
  */
-const isArrayEqual = (arr, other) => {
+const isArrayEqual = (arr: Array<any>, other: Array<any>): boolean => {
 	if (!isArray(other)) {
 		return false;
 	}

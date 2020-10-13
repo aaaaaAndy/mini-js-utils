@@ -19,7 +19,7 @@ import { invariant } from "../log";
  * isEffectiveObject({}); // false
  * isEffectiveObject({ age: 12 }); true
  */
-const isEffectiveObject = (obj) => isObject(obj) && Object.keys(obj).length > 0;
+const isEffectiveObject = (obj: object): boolean => isObject(obj) && Object.keys(obj).length > 0;
 
 /**
  * 判断是否为一个有效值
@@ -32,7 +32,7 @@ const isEffectiveObject = (obj) => isObject(obj) && Object.keys(obj).length > 0;
  * isEffectiveValue([]); // false
  * isEffectiveValue({}); // false
  */
-const isEffectiveValue = (value) => {
+const isEffectiveValue = (value: any): boolean => {
 	if (
 		value !== ''
 		&& value !== null
@@ -54,13 +54,15 @@ const isEffectiveValue = (value) => {
  * const person = { name: 'andy' };
  * deleteKeys(person, 'name'); // {}
  */
-const deleteKeys = (obj, keys) => {
+const deleteKeys = (obj: object, keys: string | Array<string>) => {
 	if (isObject(obj)) {
 		if (isString(keys)) {
+			// @ts-ignore
 			delete obj[keys];
 		}
 
 		if (isArray(keys)) {
+			// @ts-ignore
 			keys.forEach(key => delete obj[key]);
 		}
 	}
@@ -76,7 +78,7 @@ const deleteKeys = (obj, keys) => {
  *	};
  * deleteInvalidateKeys(person); // { name: 'andy' }
  */
-const deleteInvalidateKeys = (obj) => {
+const deleteInvalidateKeys = (obj: object) => {
 	invariant(isObject(obj), '参数应为Object类型');
 
 	if (!isObject(obj)) {
@@ -84,7 +86,9 @@ const deleteInvalidateKeys = (obj) => {
 	}
 
 	for (let propName in obj) {
+		// @ts-ignore
 		if (!isEffectiveValue(obj[propName])) {
+			// @ts-ignore
 			delete obj[propName];
 		}
 	}
@@ -98,7 +102,7 @@ const deleteInvalidateKeys = (obj) => {
  * isObjectEqual({ age: 12 }, { age: 12 }); // true
  * isObjectEqual({ age: 12 }, { age: '12' }); // true
  */
-const isObjectEqual = (obj, other) => {
+const isObjectEqual = (obj: object, other: object) => {
 	if (!isObject(other)) {
 		return false;
 	}
@@ -108,6 +112,7 @@ const isObjectEqual = (obj, other) => {
 	}
 
 	for (let propName in obj) {
+		// @ts-ignore
 		const typeString = getTypeString(obj[propName]);
 
 		switch (typeString) {
@@ -116,21 +121,25 @@ const isObjectEqual = (obj, other) => {
 			case 'null':
 			case 'undefined':
 			case 'boolean':
+				// @ts-ignore
 				if (obj[propName] !== other[propName]) {
 					return false;
 				}
 				break;
 			case 'object':
+				// @ts-ignore
 				if (!isObjectEqual(obj[propName], other[propName])) {
 					return false;
 				}
 				break;
 			case 'array':
+				// @ts-ignore
 				if (!isArrayEqual(obj[propName], other[propName])) {
 					return false;
 				}
 				break;
 			default:
+				// @ts-ignore
 				if (String(obj[propName]) !== String(other[propName])) {
 					return false;
 				}

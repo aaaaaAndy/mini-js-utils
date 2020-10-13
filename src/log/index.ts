@@ -6,7 +6,7 @@
  * const a = 1;
  * invariant(typeof a === 'object', 'a不是object'); // 'a不是object'
  */
-function invariant(condition, format) {
+function invariant(condition: boolean, format: string) {
 	if (!condition) {
 		console.warn(format);
 	}
@@ -15,3 +15,4 @@ function invariant(condition, format) {
 export {
 	invariant
 };
+

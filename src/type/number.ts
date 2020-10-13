@@ -13,7 +13,7 @@ import {
  * isEffectiveNumber('123a'); // false
  * isEffectiveNumber(abc); // false
  */
-const isEffectiveNumber = (value) => isNumber(value) || (isString(value) && !isNaN(value))
+const isEffectiveNumber = (value: number | string): boolean => isNumber(value) || (isString(value) && !isNaN(Number(value)))
 
 /**
  * 判断两个数字是否相等
@@ -25,7 +25,7 @@ const isEffectiveNumber = (value) => isNumber(value) || (isString(value) && !isN
  * isNumberEqual(12, '12'); // true
  * isNumberEqual(12, '12a'); // false
  */
-const isNumberEqual = (num, other) => {
+const isNumberEqual = (num: number, other: number | string): boolean => {
 	if (isNumber(other) || isString(other)) {
 		return Number(num) === Number(other);
 	}
