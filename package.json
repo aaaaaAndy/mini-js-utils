@@ -1,6 +1,6 @@
 {
   "name": "mini-js-utils",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "一个简洁的Javascript工具库",
   "main": "umd/index.js",
   "types": "umd/index.d.ts",
