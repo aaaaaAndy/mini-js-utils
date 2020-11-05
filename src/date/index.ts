@@ -1,4 +1,4 @@
-import { dateFormat } from './date';
+import { dateFormat, formatDate } from './date';
 import { now } from './common';
 import {
 	getTimeStamp,
@@ -10,6 +10,7 @@ import {
 export {
 	// 日期处理
 	dateFormat,
+	formatDate,
 
 	// timestamp处理
 	now,

@@ -1,4 +1,5 @@
 import { isMillisecondsTimeStamp } from './timestamp';
+import { isNumber } from '../type';
 
 /**
  * 时间格式化
@@ -10,6 +11,10 @@ import { isMillisecondsTimeStamp } from './timestamp';
  * const currentDate = dateFormat(now(), 'yyyy-MM-dd')
  */
 const dateFormat = (timeStamp: number, fmt = 'yyyy-MM-dd HH:mm:ss') => {
+	if (!isNumber(timeStamp)) {
+		return '';
+	}
+
 	if (!isMillisecondsTimeStamp(timeStamp)) {
 		return timeStamp;
 	}
@@ -53,6 +58,9 @@ const dateFormat = (timeStamp: number, fmt = 'yyyy-MM-dd HH:mm:ss') => {
 	return fmt;
 };
 
+const formatDate = dateFormat;
+
 export {
 	dateFormat,
+	formatDate,
 }

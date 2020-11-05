@@ -1,2 +1,3 @@
 declare const dateFormat: (timeStamp: number, fmt?: string) => string | number;
-export { dateFormat, };
+declare const formatDate: (timeStamp: number, fmt?: string) => string | number;
+export { dateFormat, formatDate, };
